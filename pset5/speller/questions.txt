@@ -1,0 +1,13 @@
+0. Pneumonoultramicroscopicsilicovolcanoconiosis is the longest word in the oxford dictionary. It also refers to a lung disease that is otherwise known as silicosis. 
+
+1.  getrusage() returns resource usage measures for who, which in the case of speller.c is always RUSAGE_SELF (Return resource usage statistics for the calling process, which is the sum of resources used by all threads in the process.)
+
+2. There are 16 members in a variable of type struct rusage.
+
+3.  We pass the structs by reference as passing a pointer takes less time compared to passing a copy of a struct which also consumes a lot of memory.
+
+4.  c = fgetc(fp) stores a character from the file fp and advances the position indicatior to the next character in fp till EOF. Each character is tested a) if it is an alphabet or an apostrophe, & index is not 0 of the word, the character is added to the array named word and the index incrememnted. b)Else if the character is a number, the word is skipped over till we find the next word (separated by a space) c)else if we hit a space character, we have found an entire new word, so we terminate the word by adding a null character (/0) to the end of the array.
+
+5.  if we use fscanf instead of fgetc, fscanf would scan segments of texts terminated by newline or tabs. A words end with punctuation sometimes , it would make the reading and recognising difficult. Also fscanf may scan a text of length more than capacity leading to a seg fault.
+
+6.  to prevent changes to the string the parameter is pointing to. In this case to prevent changes to a read word an the dictionary we are using.

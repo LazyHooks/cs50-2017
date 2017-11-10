@@ -1,0 +1,29 @@
+1.  stdint.h is a header file in C that declares a set of integer types that have a specified number of bits (signifying size) pertaining to the range of values that can be stored in them as defined in the library.
+
+2.  to initialise the width of the respective variables (as per width assigned to uint8 and so on in the library). These help in making sure the data does not beyond out of the structure of the bitmap file.
+
+3.  The variables have no. og bytes as follows:
+    BYTE  - 8bit = 1 byte
+    DWORD - 32bits = 4 bytes
+    LONG  - 32bits = 4 bytes
+    WORD  - 16bits = 2 bytes
+    
+4.  ASCII :         B      M
+    Hexadecimal:   0x42   0x4d
+    Decimal:        66     77
+    
+5.  bfSize generally represents the total size of the whole file (in bytes) whereas biSize represents the sie of the information in the Bitmap Header file (in bytes).
+
+6.  if biHeight is negative then the bitmap image is in top down format instead of the default format (bottom up).
+
+7.  biBitCount
+
+8.  if the program cant find the file of the user input's name or if the file is corrupt or not supported or incompatible with the program.
+
+9.  the third argument signifies how many elements we want to read and as per the algo , in the iteration we only need to read one struct at a time, hence 1.
+
+10. 3 ( [3*3]%4=1 ; [1*3]%4=1 ; and also since 3*3 = 9 pixels and the nearest multiple of 4 is 12, padding would be 3.]
+
+11. fseek sets the file position indicator for the stream to a new position as per parameters passed on to it.
+
+12. seek_cur is the current position of the file pointer (cursor).

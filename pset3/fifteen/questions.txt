@@ -1,0 +1,7 @@
+0. Besides 4x4, Game of fifteen allows dimensions from 3 to 9 as board size. Thus the board size could be 3x3 to 9x9.
+
+1. The Game's board is represented with a 2 dimensional array of integer type.
+
+2. the greet() function is called at the start of the game to greet the player.
+
+3.The functions we apparently need to implement are init(), draw(), move() & won().

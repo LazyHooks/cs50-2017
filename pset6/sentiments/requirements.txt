@@ -1,0 +1,7 @@
+Flask
+nltk
+plotly
+termcolor
+twython
+os module
+sys module

@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+
+import os #operating system based functionality
+import sys
+import helpers
+
+from termcolor import colored
+from analyzer import Analyzer
+
+if len(sys.argv)!=2:
+    sys.exit("Usage: ./tweets @username") #ensures proper usage
+    
+#list paths
+positives = os.path.join(sys.path[0], "positive-words.txt")
+negatives = os.path.join(sys.path[0], "negative-words.txt")
+
+# set user name
+user_name = sys.argv[1].strip('@')
+
+tweets = helpers.get_user_timeline(user_name, 50)
+
+#if username does not exist
+if tweets ==None:
+    sys.exit("user doesn't exist")
+
+#Analyzer Constructor 
+analyzer = Analyzer(positives, negatives)
+
+#iterate over tweets
+for tweet in tweets:
+    score =analyzer.analyze(tweet)
+    #check score
+    if score>0.0:
+        print(colored("{} {}".format(score, tweet),"green"))
+    elif score<0.0:
+        print(colored("{} {}".format(score, tweet),"red"))
+    else:
+        print(colored("{} {}".format(score, tweet),"yellow"))
